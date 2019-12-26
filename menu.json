@@ -1,0 +1,8 @@
+{
+	"items": [
+	{
+		"name": "Weatherstation",
+		"action": "./kindle-weather.sh"
+	}
+	]
+}
