@@ -187,92 +187,85 @@
  </g>
  <g transform="rotate(90 124.57 86.766)" font-family="Arial, Helvetica, sans-serif">
   <g transform="translate(40.312,47.307)">
-   <text x="14.6439" y="107.74013" font-size="6px" text-anchor="middle">#DA1</text>
+   <text x="14.6439" y="107.74013" font-size="7px" text-anchor="middle">#DA1</text>
    <use transform="matrix(.67549 0 0 .76572 4.9336 109.26)" width="100%" height="100%" xlink:href="##DI1"/>
-   <g font-size="5px" text-anchor="middle">
-    <text x="15" y="138.25587">#DH1°C</text>
-    <text x="15" y="142.82271">#DL1°C</text>
-    <text x="15" y="147.61311">#DP1%</text>
+   <g font-size="7px" text-anchor="middle">
+    <text x="15" y="138.25587">#DL1..#DH1°C</text>
+    <text x="15" y="145.61311">#DP1%</text>
     <text x="15" y="152.49748">#DM1mm</text>
-   </g>
+    </g>
   </g>
  </g>
  <path d="m60.346 37.75h-50.566v-0.28291h50.566z"/>
  <g transform="rotate(90 105.21 106.12)" font-family="Arial, Helvetica, sans-serif">
   <g transform="translate(40.312,47.307)">
-   <text x="14.6439" y="107.74013" font-size="6px" text-anchor="middle">#DA2</text>
+   <text x="14.6439" y="107.74013" font-size="7px" text-anchor="middle">#DA2</text>
    <use transform="matrix(.67549 0 0 .76572 4.9336 109.26)" width="100%" height="100%" xlink:href="##DI2"/>
-   <g font-size="5px" text-anchor="middle">
-    <text x="15" y="138.25587">#DH2°C</text>
-    <text x="15" y="142.82271">#DL2°C</text>
-    <text x="15" y="147.61311">#DP2%</text>
+   <g font-size="7px" text-anchor="middle">
+    <text x="15" y="138.25587">#DL2..#DH2°C</text>
+    <text x="15" y="145.61311">#DP2%</text>
     <text x="15" y="152.49748">#DM2mm</text>
-   </g>
+    </g>
   </g>
  </g>
  <path d="m60.346 76.462h-50.566v-0.28291h50.566z"/>
  <g transform="rotate(90 85.854 125.48)" font-family="Arial, Helvetica, sans-serif">
   <g transform="translate(40.312,47.307)">
-   <text x="14.6439" y="107.74013" font-size="6px" text-anchor="middle">#DA3</text>
+   <text x="14.6439" y="107.74013" font-size="7px" text-anchor="middle">#DA3</text>
    <use transform="matrix(.67549 0 0 .76572 4.9336 109.26)" width="100%" height="100%" xlink:href="##DI3"/>
-   <g font-size="5px" text-anchor="middle">
-    <text x="15" y="138.25587">#DH3°C</text>
-    <text x="15" y="142.82271">#DL3°C</text>
-    <text x="15" y="147.61311">#DP3%</text>
+   <g font-size="7px" text-anchor="middle">
+    <text x="15" y="138.25587">#DL3..#DH3°C</text>
+    <text x="15" y="145.61311">#DP3%</text>
     <text x="15" y="152.49748">#DM3mm</text>
-   </g>
+    </g>
   </g>
  </g>
  <path d="m60.346 115.18h-50.566v-0.2829h50.566z"/>
  <g transform="rotate(90 66.498 144.84)" font-family="Arial, Helvetica, sans-serif">
   <g transform="translate(40.312,47.307)">
-   <text x="14.6439" y="107.74013" font-size="6px" text-anchor="middle">#DA4</text>
+   <text x="14.6439" y="107.74013" font-size="7px" text-anchor="middle">#DA4</text>
    <use transform="matrix(.67549 0 0 .76572 4.9336 109.26)" width="100%" height="100%" xlink:href="##DI4"/>
-   <g font-size="5px" text-anchor="middle">
-    <text x="15" y="138.25587">#DH4°C</text>
-    <text x="15" y="142.82271">#DL4°C</text>
-    <text x="15" y="147.61311">#DP4%</text>
+   <g font-size="7px" text-anchor="middle">
+    <text x="15" y="138.25587">#DL4..#DH4°C</text>
+    <text x="15" y="145.61311">#DP4%</text>
     <text x="15" y="152.49748">#DM4mm</text>
-   </g>
+    </g>
   </g>
  </g>
  <path d="m60.346 153.89h-50.566v-0.2829h50.566z"/>
  <g transform="rotate(90 47.141 164.19)" font-family="Arial, Helvetica, sans-serif">
   <g transform="translate(40.312,47.307)">
-   <text x="14.6439" y="107.74013" font-size="6px" text-anchor="middle">#DA5</text>
+   <text x="14.6439" y="107.74013" font-size="7px" text-anchor="middle">#DA5</text>
    <use transform="matrix(.67549 0 0 .76572 4.9336 109.26)" width="100%" height="100%" xlink:href="##DI5"/>
-   <g font-size="5px" text-anchor="middle">
-    <text x="15" y="138.25587">#DH5°C</text>
-    <text x="15" y="142.82271">#DL5°C</text>
-    <text x="15" y="147.61311">#DP5%</text>
+   <g font-size="7px" text-anchor="middle">
+    <text x="15" y="138.25587">#DL5..#DH5°C</text>
+    <text x="15" y="145.61311">#DP5%</text>
     <text x="15" y="152.49748">#DM5mm</text>
-   </g>
+    </g>
   </g>
  </g>
  <path d="m60.346 192.6h-50.566v-0.2829h50.566z"/>
  <g transform="rotate(90 27.786 183.55)" font-family="Arial, Helvetica, sans-serif">
   <g transform="translate(40.312,47.307)">
-   <text x="14.6439" y="107.74013" font-size="6px" text-anchor="middle">#DA6</text>
+   <text x="14.6439" y="107.74013" font-size="7px" text-anchor="middle">#DA6</text>
    <use transform="matrix(.67549 0 0 .76572 4.9336 109.26)" width="100%" height="100%" xlink:href="##DI6"/>
-   <g font-size="5px" text-anchor="middle">
-    <text x="15" y="138.25587">#DH6°C</text>
-    <text x="15" y="142.82271">#DL6°C</text>
-    <text x="15" y="147.61311">#DP6%</text>
+   <g font-size="7px" text-anchor="middle">
+    <text x="15" y="138.25587">#DL6..#DH6°C</text>
+    <text x="15" y="145.61311">#DP6%</text>
     <text x="15" y="152.49748">#DM6mm</text>
-   </g>
+    </g>
   </g>
  </g>
  <path d="m60.346 231.31h-50.566v-0.28291h50.566z"/>
  <g transform="rotate(90 8.4261 202.91)" font-family="Arial, Helvetica, sans-serif">
   <g transform="translate(40.312,47.307)">
-   <text x="14.6439" y="107.74013" font-size="6px" text-anchor="middle">#DA7</text>
+   <text x="14.6439" y="107.74013" font-size="7px" text-anchor="middle">#DA7</text>
    <use transform="matrix(.67549 0 0 .76572 4.9336 109.26)" width="100%" height="100%" xlink:href="##DI7"/>
-   <g font-size="5px" text-anchor="middle">
-    <text x="15" y="138.25587">#DH7°C</text>
-    <text x="15" y="142.82271">#DL7°C</text>
-    <text x="15" y="147.61311">#DP7%</text>
+   <g font-size="7px" text-anchor="middle">
+    <text x="15" y="138.25587">#DL7..#DH7°C</text>
+    <text x="15" y="145.61311">#DP7%</text>
     <text x="15" y="152.49748">#DM7mm</text>
-   </g>
+    </g>
   </g>
  </g>
 </svg>
