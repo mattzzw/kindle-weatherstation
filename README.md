@@ -7,7 +7,7 @@ The Kindle fetches weather data from DarkSky every 60 minutes, creates a SVG fil
 based on a template, converts the SVG to PNG, displays the newly generated PNG and
 goes to sleep (STR/suspend to RAM) for the remaining time.
 
-![screenshot](./screenshot.png)
+![screenshot](./screenshot.jpg)
 
 * weather2svg.py: Queries weather data and assembles a SVG file based on template
 * create-png.sh: Gets data, converts svg file to png and compresses png file
