@@ -2,7 +2,7 @@
 	"items": [
 	{
 		"name": "Weatherstation",
-		"action": "./kindle-weather.sh"
+		"action": "setsid ./kindle-weather.sh &"
 	}
 	]
 }
