@@ -36,11 +36,13 @@ output = output.replace('#LO00','{:.0f}'.format(weather['daily']['data'][0]['tem
 output = output.replace('#SUMNOW', weather['currently']['summary'])
 output = output.replace('#SUMHR', weather['hourly']['summary'])
 output = output.replace('#DP0', '{:.0f}'.format(weather['daily']['data'][0]['precipProbability'] * 100))
-output = output.replace('#DM0', '{:.2f}'.format(weather['daily']['data'][0]['precipIntensity'], 2))
-output = output.replace('#DBP', '{:.0f}'.format(weather['daily']['data'][0]['pressure'], 2))
+output = output.replace('#DM0', '{:.2f}'.format(weather['daily']['data'][0]['precipIntensity']))
+output = output.replace('#DBP', '{:.0f}'.format(weather['daily']['data'][0]['pressure']))
+output = output.replace('#DHU', '{:.0f}'.format(weather['daily']['data'][0]['humidity'] * 100))
 
 output = output.replace('#SR', datetime.fromtimestamp(weather['daily']['data'][0]['sunriseTime']).strftime('%H:%M'))
 output = output.replace('#SS', datetime.fromtimestamp(weather['daily']['data'][0]['sunsetTime']).strftime('%H:%M'))
+
 
 # battery
 # depending on board type
@@ -50,7 +52,6 @@ proc_out = subprocess.Popen("gasgauge-info -s".split(),
                                     stderr=subprocess.STDOUT)
 battery_capacity,stderr = proc_out.communicate()
 output = output.replace('#BAT', battery_capacity.decode("utf-8"))
-
 
 # next 12 hours
 for i in range(1, 13):
