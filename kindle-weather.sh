@@ -7,13 +7,14 @@ FBINK="/mnt/us/extensions/MRInstaller/bin/K5/fbink -q"
 FONT="regular=/usr/java/lib/fonts/Palatino-Regular.ttf"
 
 #PW3
-FBROTATE="/sys/devices/platform/imx_epdc_fb/graphics/fb0/rotate"
-BACKLIGHT="/sys/devices/platform/imx-i2c.0/i2c-0/0-003c/max77696-bl.0/backlight/max77696-bl/brightness"
-#PW2
-#FBROTATE="/sys/devices/platform/mxc_epdc_fb/graphics/fb0/rotate"
-#BACKLIGHT="/sys/devices/system/fl_tps6116x/fl_tps6116x0/fl_intensity"
+#FBROTATE="/sys/devices/platform/imx_epdc_fb/graphics/fb0/rotate"
+#BACKLIGHT="/sys/devices/platform/imx-i2c.0/i2c-0/0-003c/max77696-bl.0/backlight/max77696-bl/brightness"
 
-wait_wlan() {
+#PW2
+FBROTATE="/sys/devices/platform/mxc_epdc_fb/graphics/fb0/rotate"
+BACKLIGHT="/sys/devices/system/fl_tps6116x/fl_tps6116x0/fl_intensity"
+
+wait_wlan_connected() {
   return `lipc-get-prop com.lab126.wifid cmState | grep CONNECTED | wc -l`
 }
 
@@ -41,7 +42,19 @@ stop tmd
 stop x
 stop todo
 stop mcsd
+stop archive
+stop dynconfig
+stop dpmd
+stop appmgrd
+stop stackdumpd
 sleep 2
+
+# At this point we should be left with a more or less Amazon-free environment
+# I leave
+# - powerd & deviced
+# - lipc-daemon
+# - rcm
+# running.
 
 ### If we have a wan module installed...
 #if [ -f /usr/sbin/wancontrol ]
@@ -75,8 +88,8 @@ while true; do
         sleep 1
     done
 
-    ### Wifi interface is up, connect to wifi.
-    /mnt/us/wifi.sh
+    ### Wifi interface is up, connect to access point.
+    ./wifi.sh
 
 	### Wait for WIFI connection
     TRYCNT=0
