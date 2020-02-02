@@ -6,7 +6,14 @@ SLEEP_MINUTES=60
 FBINK="/mnt/us/extensions/MRInstaller/bin/K5/fbink -q"
 FONT="regular=/usr/java/lib/fonts/Palatino-Regular.ttf"
 
-wait_wlan_connected() {
+#PW3
+FBROTATE="/sys/devices/platform/imx_epdc_fb/graphics/fb0/rotate"
+BACKLIGHT="/sys/devices/platform/imx-i2c.0/i2c-0/0-003c/max77696-bl.0/backlight/max77696-bl/brightness"
+#PW2
+#FBROTATE="/sys/devices/platform/mxc_epdc_fb/graphics/fb0/rotate"
+#BACKLIGHT="/sys/devices/system/fl_tps6116x/fl_tps6116x0/fl_intensity"
+
+wait_wlan() {
   return `lipc-get-prop com.lab126.wifid cmState | grep CONNECTED | wc -l`
 }
 
@@ -21,9 +28,9 @@ echo -n 0 > /sys/devices/system/fl_tps6116x/fl_tps6116x0/fl_intensity
 echo "------------------------------------------------------------------------" >> $LOG
 echo "`date '+%Y-%m-%d_%H:%M:%S'`: Starting up, killing framework et. al." >> $LOG
 
-echo 0 > /sys/devices/platform/mxc_epdc_fb/graphics/fb0/rotate
+echo 0 > $FBROTATE
 $FBINK -w -c -f -m -t $FONT,size=20,top=410,bottom=0,left=0,right=0 "Starting weatherstation..." > /dev/null 2>&1
-echo 3 > /sys/devices/platform/mxc_epdc_fb/graphics/fb0/rotate
+echo 3 > $FBROTATE
 sleep 1
 
 ### stop processes that we don't need
@@ -55,8 +62,8 @@ while true; do
 	let WAKEUP_TIME=$NOW+SLEEP_SECONDS
 	echo `date '+%Y-%m-%d_%H:%M:%S'`: Wake-up time set for  `date -d @${WAKEUP_TIME}` >> $LOG
 
-    ### Dim Backlight, fighting powerd...
-    echo -n 0 > /sys/devices/system/fl_tps6116x/fl_tps6116x0/fl_intensity
+    ### Dim Backlight
+    echo -n 0 > $BACKLIGHT
 
 	### Disable CPU Powersave
 	echo ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
