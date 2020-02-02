@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync -zrvh * root@kindle:/mnt/us/extensions/weatherstation
+rsync -zrvh --update * root@kindle:/mnt/us/extensions/weatherstation
