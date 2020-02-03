@@ -3,16 +3,17 @@
 PWD=$(pwd)
 LOG="/mnt/us/weatherstation.log"
 SLEEP_MINUTES=60
-FBINK="/mnt/us/extensions/MRInstaller/bin/K5/fbink -q"
+FBINK="fbink -q"
 FONT="regular=/usr/java/lib/fonts/Palatino-Regular.ttf"
 
+### uncomment/adjust according to your hardware
 #PW3
-#FBROTATE="/sys/devices/platform/imx_epdc_fb/graphics/fb0/rotate"
-#BACKLIGHT="/sys/devices/platform/imx-i2c.0/i2c-0/0-003c/max77696-bl.0/backlight/max77696-bl/brightness"
+FBROTATE="/sys/devices/platform/imx_epdc_fb/graphics/fb0/rotate"
+BACKLIGHT="/sys/devices/platform/imx-i2c.0/i2c-0/0-003c/max77696-bl.0/backlight/max77696-bl/brightness"
 
 #PW2
-FBROTATE="/sys/devices/platform/mxc_epdc_fb/graphics/fb0/rotate"
-BACKLIGHT="/sys/devices/system/fl_tps6116x/fl_tps6116x0/fl_intensity"
+#FBROTATE="/sys/devices/platform/mxc_epdc_fb/graphics/fb0/rotate"
+#BACKLIGHT="/sys/devices/system/fl_tps6116x/fl_tps6116x0/fl_intensity"
 
 wait_wlan_connected() {
   return `lipc-get-prop com.lab126.wifid cmState | grep CONNECTED | wc -l`
@@ -23,19 +24,20 @@ wait_wlan_ready() {
 }
 
 ### Dim Backlight
-echo -n 0 > /sys/devices/system/fl_tps6116x/fl_tps6116x0/fl_intensity
+echo -n 0 > $BACKLIGHT
 
 ### Prepare Kindle, shutdown framework etc.
 echo "------------------------------------------------------------------------" >> $LOG
 echo "`date '+%Y-%m-%d_%H:%M:%S'`: Starting up, killing framework et. al." >> $LOG
 
+### stop processes that we don't need
+stop lab126_gui
+### give an update to the outside world...
 echo 0 > $FBROTATE
 $FBINK -w -c -f -m -t $FONT,size=20,top=410,bottom=0,left=0,right=0 "Starting weatherstation..." > /dev/null 2>&1
 echo 3 > $FBROTATE
 sleep 1
-
-### stop processes that we don't need
-stop lab126_gui
+### keep stopping stuff
 stop otaupd
 stop phd
 stop tmd
