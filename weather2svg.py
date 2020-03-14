@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-import urllib.request
-import ssl
+import requests
 from datetime import datetime
 import json
 import codecs
@@ -9,18 +8,22 @@ import subprocess
 import config
 
 
-ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+darkstar_url = config.darksky_url + config.darksky_key + '/' \
+                    + str(config.latitude) + ',' + str(config.longitude) \
+                    + config.darksky_prm
+
 try:
-    darksky_url = urllib.request.urlopen(config.darksky_url + config.darksky_key + '/' +
-                                        str(config.latitude) + ',' + str(config.longitude) +
-                                        config.darksky_prm, context=ssl_context)
-except Exception as e:
+    r = requests.get(darkstar_url)
+    r.raise_for_status()
+except requests.exceptions.HTTPError as errh:
+    print ("Http Error: ",errh)
+    exit(-1)
+except requests.exceptions.RequestException as e:
     print ("Problem getting data: " + str(e))
     exit(-1)
 
 # read the data from the URL and print it
-data = darksky_url.read()
-weather = json.loads(data.decode('utf-8'))
+weather = r.json()
 
 # process SVG
 
