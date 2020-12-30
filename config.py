@@ -1,10 +1,9 @@
+### API URL, don't touch
+api_url = 'https://api.openweathermap.org/data/2.5/onecall?'
 
 ### Change your key
-darksky_key = 'aabbccddeeff00112233445566778899'
+api_key = '00000000000000000000000000000000'
 
-darksky_url = 'https://api.darksky.net/forecast/'
-darksky_prm = '?lang=de&units=si'
-
-### Change your location
-latitude = 53.551086
-longitude = 9.993682
+### Adjust your lat/lon, units and language
+### --> https://openweathermap.org/api/one-call-api
+api_param = 'lat=53.5&lon=10&units=metric&lang=de'
