@@ -3,7 +3,7 @@
 This is a serverless implementation of a weatherstation for the Kindle (PW2)
 that is also optimized for battery runtime (~ a month).
 
-The Kindle fetches weather data from DarkSky every 60 minutes, creates a SVG file
+The Kindle fetches weather data from Openweathermap.org every 60 minutes, creates a SVG file
 based on a template, converts the SVG to PNG, displays the newly generated PNG and
 goes to sleep (STR/suspend to RAM) for the remaining time.
 
@@ -38,6 +38,7 @@ Optionally, you can use a startup script to start the weatherstation automatical
 
 * `$ mntroot rw`
 * `$ cp /mnt/us/extensions/weatherstation/weatherstation.conf /etc/upstart`
+* `$ mntroot ro`
 * `$ start weatherstation`
 
 ## Stopping weatherstation:
@@ -48,4 +49,3 @@ Optionally, you can use a startup script to start the weatherstation automatical
 * Building on ideas and code from
  * https://mpetroff.net/2012/09/kindle-weather-display/ and
  * https://github.com/nicoh88/kindle-kt3_weatherdisplay_battery-optimized
-* Using icons from https://github.com/rickellis/SVG-Weather-Icons
