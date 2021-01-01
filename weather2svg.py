@@ -49,7 +49,6 @@ output = output.replace('#DHU', '{:.0f}'.format(weather['daily'][0]['humidity'])
 output = output.replace('#SR', datetime.fromtimestamp(weather['daily'][0]['sunrise']).strftime('%H:%M'))
 output = output.replace('#SS', datetime.fromtimestamp(weather['daily'][0]['sunset']).strftime('%H:%M'))
 
-
 # battery
 # depending on board type
 # could also be e.g. /sys/devices/system/yoshi_battery/yoshi_battery0/battery_capacity
@@ -65,12 +64,12 @@ for i in range(1, 13):
     output = output.replace('#IC'+istr, weather['hourly'][i]['weather'][0]['icon'])
     output = output.replace('#TM'+istr, str(datetime.fromtimestamp(weather['hourly'][i]['dt']).strftime('%H:%M')))
     output = output.replace('#TE'+istr, '{:.0f}'.format(weather['hourly'][i]['temp']))
-    output = output.replace('#PP'+istr, '{:.0f}'.format(weather['hourly'][i]['pop']))
+    output = output.replace('#PP'+istr, '{:.0f}'.format(weather['hourly'][i]['pop'] * 100))
     precip = 0
     if 'rain' in weather['hourly'][i]:
-        precip = weather['hourly'][i]['rain']
+        precip = weather['hourly'][i]['rain']['1h']
     if 'snow' in weather['hourly'][i]:
-        precip += weather['hourly'][i]['snow']
+        precip += weather['hourly'][i]['snow']['1h']
     output = output.replace('#PA'+istr, '{:.2f}'.format(precip))
 
 #next 7 days
