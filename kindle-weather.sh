@@ -79,6 +79,8 @@ while true; do
 
     ### Dim Backlight
     echo -n 0 > $BACKLIGHT
+    ### Force landscape mode
+    echo 0 > $FBROTATE
 
 	### Disable CPU Powersave
 	echo ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
