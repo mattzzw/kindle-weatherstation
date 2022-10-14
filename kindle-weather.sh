@@ -79,6 +79,8 @@ while true; do
 
     ### Dim Backlight
     echo -n 0 > $BACKLIGHT
+    ### Force landscape mode
+    echo 0 > $FBROTATE
 
 	### Disable CPU Powersave
 	echo ondemand > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
@@ -135,7 +137,8 @@ while true; do
     ### flight mode on...
     lipc-set-prop com.lab126.cmd wirelessEnable 0
 
-	sleep 2
+    ### 3 secs necessary on Kindle PW (EY21) to avoid random hangs
+	sleep 3
 
     ### set wake up time to one hour
 	rtcwake -d /dev/rtc1 -m no -s $SLEEP_SECONDS

@@ -1,5 +1,5 @@
 ### API URL, don't touch
-api_url = 'https://api.openweathermap.org/data/2.5/onecall?'
+api_url = 'https://api.openweathermap.org/data/3.0/onecall?'
 
 ### Change your key
 api_key = '00000000000000000000000000000000'
